@@ -1,0 +1,32 @@
+{
+    "music_files": [
+        {
+            "path": "music_files/AWayOfLife.mp3",
+            "title": "A Way of Life"
+        },
+        {
+            "path": "music_files/ColorsFlyingHigh.mp3",
+            "title": "Colors Flying High"
+        },
+        {
+            "path": "music_files/DiscDog.mp3",
+            "title": "Disc Dog"
+        },
+        {
+            "path": "music_files/MassDestruction.mp3",
+            "title": "Mass Destruction"
+        },
+        {
+            "path": "music_files/MemoriesOfYou.mp3",
+            "title": "Memories of You"
+        },
+        {
+            "path": "music_files/TheAlmighty.mp3",
+            "title": "The Almighty"
+        },
+        {
+            "path": "music_files/Time.mp3",
+            "title": "Time"
+        }
+    ]
+}
