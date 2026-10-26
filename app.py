@@ -14,10 +14,11 @@ class MainWindow(QMainWindow):
 
         self.load_json("songs.json")
         self.current_song_index = 0
-        self.max_songs = 0
+        self.prev_song_index = 0
         
         self.init_ui()
         self.init_player()
+        self.load_qss("style.qss")
 
     def load_json(self, path):
         try:
@@ -34,9 +35,14 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
         container.setLayout(layout)
 
+        
+
         first_container = QHBoxLayout()
         layout.addLayout(first_container)
         # Adding elements        
+        sec_container = QHBoxLayout()
+        layout.addLayout(sec_container)
+
         self.repeat = QCheckBox("Repeat")
         self.shuffle = QCheckBox("Shuffle")
         first_container.addWidget(self.repeat)
@@ -50,16 +56,29 @@ class MainWindow(QMainWindow):
         self.volume.setValue(75)
         first_container.addWidget(self.volume)
 
+        self.prev = QPushButton("Prev")
         self.song_progress = QSlider(Qt.Orientation.Horizontal)
+        self.next = QPushButton("Next")
 
-        layout.addWidget(self.song_progress)
+        sec_container.addWidget(self.prev)
+        sec_container.addWidget(self.song_progress)
+        sec_container.addWidget(self.next)
 
         # Adding method connections
         self.repeat.clicked.connect(self.handle_repeat_click)
         self.shuffle.clicked.connect(self.handle_shuffle_click)
         self.play.clicked.connect(self.handle_play_click)
         self.volume.sliderMoved.connect(self.handle_volume_slide)
+        self.prev.clicked.connect(self.handle_prev_click)
         self.song_progress.sliderMoved.connect(self.handle_song_slide)
+        self.next.clicked.connect(self.handle_next_click)
+
+    def load_qss(self, file_name):
+        try:
+            with open(file_name, "r") as f:
+                self.setStyleSheet(f.read())
+        except FileNotFoundError:
+            print(f"Warning: Stylesheet {file_name} not found.")
 
     def init_player(self):
         self.mediaPlayer = QMediaPlayer()
@@ -114,6 +133,8 @@ class MainWindow(QMainWindow):
     def handle_end_song(self, status):
         if status != QMediaPlayer.MediaStatus.EndOfMedia:
             return
+
+        self.prev_song_index = self.current_song_index
         
         if self.repeat.isChecked():
             self.mediaPlayer.setPosition(0)
@@ -140,6 +161,20 @@ class MainWindow(QMainWindow):
         
         self.setWindowTitle(f"Playing: {current_song['title']}")
         self.mediaPlayer.setSource(QUrl.fromLocalFile(file_path))
+
+    def handle_next_click(self):
+        self.mediaPlayer.setPosition(self.mediaPlayer.duration() - 1)
+
+    def handle_prev_click(self):
+        if(self.mediaPlayer.position() < 5000): #If less than 5 seconds in
+            self.current_song_index = self.prev_song_index 
+            self.load_current_song()
+            self.mediaPlayer.play()
+            self.play.setText("Pause")
+        else:
+            self.mediaPlayer.setPosition(0)
+            self.mediaPlayer.play()
+            return
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
