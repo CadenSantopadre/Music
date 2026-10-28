@@ -1,32 +1,60 @@
 {
     "music_files": [
         {
-            "path": "music_files/AWayOfLife.mp3",
-            "title": "A Way of Life"
+            "path": "music_files/Battle.mp3",
+            "title": "Battle"
         },
         {
-            "path": "music_files/ColorsFlyingHigh.mp3",
-            "title": "Colors Flying High"
+            "path": "music_files/BattleV.mp3",
+            "title": "BattleV"
         },
         {
-            "path": "music_files/DiscDog.mp3",
-            "title": "Disc Dog"
+            "path": "music_files/Boulevard.mp3",
+            "title": "Boulevard"
         },
         {
-            "path": "music_files/MassDestruction.mp3",
-            "title": "Mass Destruction"
+            "path": "music_files/ComingClean.mp3",
+            "title": "Coming Clean"
         },
         {
-            "path": "music_files/MemoriesOfYou.mp3",
-            "title": "Memories of You"
+            "path": "music_files/CruelAngels.mp3",
+            "title": "Cruel Angels"
         },
         {
-            "path": "music_files/TheAlmighty.mp3",
-            "title": "The Almighty"
+            "path": "music_files/Holiday.mp3",
+            "title": "Holiday"
+        },
+        {
+            "path": "music_files/Jesus.mp3",
+            "title": "Jesus"
+        },
+        {
+            "path": "music_files/OmnisLacrima.mp3",
+            "title": "Omnis Lacrima"
+        },
+        {
+            "path": "music_files/StJimmy.mp3",
+            "title": "St Jimmy"
+        },
+        {
+            "path": "music_files/Tank.mp3",
+            "title": "Tank"
+        },
+        {
+            "path": "music_files/TheWorld.mp3",
+            "title": "The World"
         },
         {
             "path": "music_files/Time.mp3",
             "title": "Time"
+        },
+        {
+            "path": "music_files/Title.mp3",
+            "title": "Title"
+        },
+        {
+            "path": "music_files/Ursine.mp3",
+            "title": "Ursine"
         }
     ]
 }
