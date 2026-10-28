@@ -55,6 +55,10 @@
         {
             "path": "music_files/Ursine.mp3",
             "title": "Ursine"
+        },
+        {
+            "path": "music_files/Beelzelbub.mp3",
+            "title": "Beelzelbub"
         }
     ]
 }
