@@ -1,4 +1,3 @@
-# audio_engine.py
 import time
 import threading
 from PyQt6.QtCore import QThread, pyqtSignal
@@ -8,18 +7,18 @@ from fft_analyzer import calculate_fft
 
 
 class AudioWorker(QThread):
-    track_ended = pyqtSignal()
-    playback_error = pyqtSignal(str)
+    track_ended = pyqtSignal() #Send a signal if the traack ends
+    playback_error = pyqtSignal(str) #Same here and other signals
     duration_changed = pyqtSignal(int)  # Total length in milliseconds
     position_changed = pyqtSignal(int)  # Current timestamp in milliseconds
-    spectrum_ready = pyqtSignal(list)
+    spectrum_ready = pyqtSignal(list) 
 
     def __init__(self, file_path):
         super().__init__()
         self.file_path = file_path
         self._is_running = True
         self._is_paused = False
-        self.stop_event = threading.Event()
+        self.stop_event = threading.Event() #When we pause, tell it to turn off play mode
 
         self._volume_scalar = 1.0
         self._seek_requested_ms = -1
@@ -30,11 +29,11 @@ class AudioWorker(QThread):
             raw_data = sound.raw_data
             
             total_duration_ms = len(sound)
-            self.duration_changed.emit(total_duration_ms)
+            self.duration_changed.emit(total_duration_ms) #this actually sends the thing for pyqtSignal
             
-            p = pyaudio.PyAudio()
-            stream = p.open(
-                format=p.get_format_from_width(sound.sample_width),
+            p = pyaudio.PyAudio() #inits the pyaudio module
+            stream = p.open(#Creates a channel for data to flow through
+                format=p.get_format_from_width(sound.sample_width),#bytes per sample 
                 channels=sound.channels,
                 rate=sound.frame_rate,
                 output=True,

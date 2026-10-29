@@ -14,24 +14,18 @@ class SpectrumWidget(QWidget):
 
         self.setMinimumHeight(100)
 
-        # Update the visualizer at approximately 60 FPS.
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.animate)
-        self.timer.start(16)
+        self.timer.start(16)# Update the visualizer at approximately 60 FPS.
 
     def set_spectrum(self, levels):
-        self.target_levels = list(levels[:self.n_bars])
+        self.target_levels = list(levels[:self.n_bars]) #Make a qt list of levels for nbars
 
-        # Pad the list if fewer values are received.
-        self.target_levels += [
-            0.0
-        ] * (self.n_bars - len(self.target_levels))
 
     def animate(self):
-        # Smoothly approach the latest FFT values.
-        for i in range(self.n_bars):
-            target = self.target_levels[i]
-            current = self.display_levels[i]
+        for i in range(self.n_bars):#For each bar do this:
+            target = self.target_levels[i]#Set a target as what they're suppsoed to be at
+            current = self.display_levels[i] #Then track where they are now for speed
 
             if target > current:
                 # Bars rise quickly.
@@ -46,7 +40,7 @@ class SpectrumWidget(QWidget):
 
         self.update()
 
-    def paintEvent(self, event):
+    def paintEvent(self):
         painter = QPainter(self)
 
         painter.setRenderHint(
@@ -73,7 +67,7 @@ class SpectrumWidget(QWidget):
             x = i * (bar_width + gap)
             y = height - bar_height
 
-            # Simple vertical color gradient.
+            #Give it a vertical color gradient
             color_position = i / max(self.n_bars - 1, 1)
 
             red = int(50 + 180 * color_position)

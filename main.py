@@ -199,6 +199,7 @@ class MainWindow(QMainWindow):
     def handle_prev_click(self):
         if not self.playlist:
             return
+        
         self.prev_song_index = self.current_song_index
         self.current_song_index = (self.current_song_index - 1) % len(self.playlist)
         self.load_current_song()
