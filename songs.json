@@ -1,64 +1,64 @@
 {
     "music_files": [
         {
-            "path": "music_files/Battle.mp3",
-            "title": "Battle"
+            "title": "Cruel Angels",
+            "path": "music_files/CruelAngels.mp3"
         },
         {
-            "path": "music_files/BattleV.mp3",
-            "title": "BattleV"
+            "title": "BattleV",
+            "path": "music_files/BattleV.mp3"
         },
         {
-            "path": "music_files/Boulevard.mp3",
-            "title": "Boulevard"
+            "title": "Beelzelbub",
+            "path": "music_files/Beelzelbub.mp3"
         },
         {
-            "path": "music_files/ComingClean.mp3",
-            "title": "Coming Clean"
+            "title": "Ursine",
+            "path": "music_files/Ursine.mp3"
         },
         {
-            "path": "music_files/CruelAngels.mp3",
-            "title": "Cruel Angels"
+            "title": "Battle",
+            "path": "music_files/Battle.mp3"
         },
         {
-            "path": "music_files/Holiday.mp3",
-            "title": "Holiday"
+            "title": "Title",
+            "path": "music_files/Title.mp3"
         },
         {
-            "path": "music_files/Jesus.mp3",
-            "title": "Jesus"
+            "title": "Time",
+            "path": "music_files/Time.mp3"
         },
         {
-            "path": "music_files/OmnisLacrima.mp3",
-            "title": "Omnis Lacrima"
+            "title": "Coming Clean",
+            "path": "music_files/ComingClean.mp3"
         },
         {
-            "path": "music_files/StJimmy.mp3",
-            "title": "St Jimmy"
+            "title": "Holiday",
+            "path": "music_files/Holiday.mp3"
         },
         {
-            "path": "music_files/Tank.mp3",
-            "title": "Tank"
+            "title": "Boulevard",
+            "path": "music_files/Boulevard.mp3"
         },
         {
-            "path": "music_files/TheWorld.mp3",
-            "title": "The World"
+            "title": "Jesus",
+            "path": "music_files/Jesus.mp3"
         },
         {
-            "path": "music_files/Time.mp3",
-            "title": "Time"
+            "title": "Omnis Lacrima",
+            "path": "music_files/OmnisLacrima.mp3"
         },
         {
-            "path": "music_files/Title.mp3",
-            "title": "Title"
+            "title": "St Jimmy",
+            "path": "music_files/StJimmy.mp3"
         },
         {
-            "path": "music_files/Ursine.mp3",
-            "title": "Ursine"
+            "title": "Tank",
+            "path": "music_files/Tank.mp3"
         },
         {
-            "path": "music_files/Beelzelbub.mp3",
-            "title": "Beelzelbub"
+            "title": "The World",
+            "path": "music_files/TheWorld.mp3"
         }
     ]
 }

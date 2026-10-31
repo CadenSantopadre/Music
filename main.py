@@ -4,7 +4,7 @@ import random
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QHBoxLayout, QStackedWidget
 from audio_engine import AudioWorker
 from miniplayer_view import MiniplayerView
-from equalizer_view import EqualizerView
+from spectrum_view import SpectrumView
 from playlist_view import PlaylistView
 
 
@@ -22,7 +22,6 @@ class MainWindow(QMainWindow):
         self.load_json("songs.json")
         self.init_player()
         self.init_ui()
-        self.load_qss("style.qss")
 
     def load_json(self, path):
         try:
@@ -47,7 +46,7 @@ class MainWindow(QMainWindow):
 
         nav_layout = QHBoxLayout()
         self.btn_mini = QPushButton("Miniplayer")
-        self.btn_eq = QPushButton("Equalizer")
+        self.btn_eq = QPushButton("Spectrum")
         self.btn_whole = QPushButton("Playlist")
         
         nav_layout.addWidget(self.btn_mini)
@@ -60,7 +59,7 @@ class MainWindow(QMainWindow):
 
         # Set up view references
         self.mini_view = MiniplayerView(self)
-        self.eq_view = EqualizerView(self)
+        self.eq_view = SpectrumView(self)
         self.whole_view = PlaylistView(self)
 
         self.view_stack.addWidget(self.mini_view)

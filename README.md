@@ -56,7 +56,5 @@ The app scans your downloaded tracks and maps them using a local `music_files.js
 
 ---
 
-TODO:
+Coming Soon:
 * Beat visualization
-* JSON custimization in-app
-* Reordering and playlists

@@ -3,11 +3,11 @@ from PyQt6.QtWidgets import QWidget, QVBoxLayout
 from spectrum_widget import SpectrumWidget
 
 
-class EqualizerView(QWidget):
+class SpectrumView(QWidget):
     def __init__(self, parent=None, n_bars=32):
         super().__init__(parent)
 
-        self.spectrum = SpectrumWidget(self, n_bars=n_bars)
+        self.spectrum = SpectrumWidget(self)
         layout = QVBoxLayout(self)
         layout.addWidget(self.spectrum)
 

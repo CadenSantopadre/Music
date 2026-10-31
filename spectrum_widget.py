@@ -40,7 +40,7 @@ class SpectrumWidget(QWidget):
 
         self.update()
 
-    def paintEvent(self):
+    def paintEvent(self, event): #needs event because it takes two arguments
         painter = QPainter(self)
 
         painter.setRenderHint(

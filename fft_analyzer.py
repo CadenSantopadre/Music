@@ -1,17 +1,13 @@
 import numpy as np
 
 def calculate_fft(pcm_data, sample_rate=44100, n_bars=32):
-    """
-    Convert stereo, signed 16-bit PCM audio into balanced FFT bar magnitudes.
-    Returns a list of n_bars values between 0.0 and 1.0.
-    """
     samples = np.frombuffer(pcm_data, dtype=np.int16)
     if len(samples) < 2:
-        return [0.0] * n_bars
+        return [0.0] * n_bars #If not enough samples, give 0
 
     samples = samples.ravel()
     if len(samples) % 2 != 0:
-        samples = samples[:-1]
+        samples = samples[:-1] #
 
     samples = samples.reshape(-1, 2).astype(np.float32)
     samples = samples.mean(axis=1)
@@ -52,7 +48,7 @@ def calculate_fft(pcm_data, sample_rate=44100, n_bars=32):
             # Mixing them creates an even energy spread across wide bands.
             magnitude = (np.max(band) * 0.4) + (np.mean(band) * 0.6)
 
-        # 3. EQUALIZATION BOOST (Treble Equalizer):
+        # 3. EQUALIZATION BOOST (Treble Spectrum):
         # Naturally, music has much less energy in high frequencies than low frequencies.
         # This progressively multiplies the volume of higher bars to match the bass.
         treble_boost = 1.0 + (i / n_bars) * 2.5
