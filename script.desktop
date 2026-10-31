@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=My Music App
+Comment=Launch Python script with venv
+Exec=/home/cadensantopadre/VSCode/Music/music_player.sh
+Path=/home/cadensantopadre/VSCode/Music/
+Icon=/home/cadensantopadre/Pictures/Music.jpg
+Terminal=false
+StartupNotify=false

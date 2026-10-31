@@ -3,6 +3,7 @@ import threading
 from PyQt6.QtCore import QThread, pyqtSignal
 import pyaudio
 from pydub import AudioSegment
+from beat_detector import BeatDetector
 from fft_analyzer import calculate_fft
 
 
@@ -11,7 +12,8 @@ class AudioWorker(QThread):
     playback_error = pyqtSignal(str) #Same here and other signals
     duration_changed = pyqtSignal(int)  # Total length in milliseconds
     position_changed = pyqtSignal(int)  # Current timestamp in milliseconds
-    spectrum_ready = pyqtSignal(list) 
+    spectrum_ready = pyqtSignal(list)
+    beat_detected = pyqtSignal()
 
     def __init__(self, file_path):
         super().__init__()
@@ -22,6 +24,7 @@ class AudioWorker(QThread):
 
         self._volume_scalar = 1.0
         self._seek_requested_ms = -1
+        self.beat_detector = BeatDetector()
 
     def run(self):
         try:
@@ -91,12 +94,14 @@ class AudioWorker(QThread):
                     # Analyze it for the visualizer.
                     bars = calculate_fft(
                         audio_chunk,
-                        sample_rate=44100,
+                        sample_rate=sound.frame_rate,
                         n_bars=32
                     )
 
                     # Send the results to the GUI.
                     self.spectrum_ready.emit(bars)
+                    if self.beat_detector.process(bars):
+                        self.beat_detected.emit()
 
                     # Play the same audio that we analyzed.
                     stream.write(audio_chunk)

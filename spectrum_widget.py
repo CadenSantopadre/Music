@@ -11,6 +11,7 @@ class SpectrumWidget(QWidget):
 
         self.target_levels = [0.0] * n_bars
         self.display_levels = [0.0] * n_bars
+        self.beat_flash = 0.0
 
         self.setMinimumHeight(100)
 
@@ -20,6 +21,9 @@ class SpectrumWidget(QWidget):
 
     def set_spectrum(self, levels):
         self.target_levels = list(levels[:self.n_bars]) #Make a qt list of levels for nbars
+
+    def flash_beat(self):
+        self.beat_flash = 1.0
 
 
     def animate(self):
@@ -38,6 +42,7 @@ class SpectrumWidget(QWidget):
                     target - current
                 ) * 0.18
 
+        self.beat_flash *= 0.78
         self.update()
 
     def paintEvent(self, event): #needs event because it takes two arguments
@@ -47,10 +52,9 @@ class SpectrumWidget(QWidget):
             QPainter.RenderHint.Antialiasing
         )
 
-        painter.fillRect(
-            self.rect(),
-            QColor("#151515")
-        )
+        background = QColor("#151515")
+        background = background.lighter(100 + int(self.beat_flash * 70))
+        painter.fillRect(self.rect(), background)
 
         width = self.width()
         height = self.height()

@@ -104,6 +104,12 @@ class MainWindow(QMainWindow):
         self.audio_worker.spectrum_ready.connect(
             self.eq_view.spectrum.set_spectrum
         )
+        self.audio_worker.beat_detected.connect(
+            self.mini_view.spectrum.flash_beat
+        )
+        self.audio_worker.beat_detected.connect(
+            self.eq_view.spectrum.flash_beat
+        )
 
         # Core playback control signals
         self.audio_worker.track_ended.connect(self.handle_end_song)

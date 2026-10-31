@@ -6,6 +6,7 @@ This Music Player is a PyQt music player that plays downloaded music stored in a
 
 ### Features
 * **Real-time Spectrum Analysis:** FFT-based audio visualizer built right into the window
+* **Beat Detection:** Detects strong low-frequency changes and briefly pulses the spectrum views
 * **JSON-backed Library:** Simple, portable `music_files.json` file to manage tracks, playlists, and metadata.
 * **Offline Playback:** Optimized for playing local audio files (MP3 Only) with minimal CPU overhead.
 
@@ -16,22 +17,24 @@ This Music Player is a PyQt music player that plays downloaded music stored in a
 #### Prerequisites
 Ensure your venv has the following dependancies:
 * numpy
-* pyaudio
+* pyaudio - if on linux, run in global terminal: `sudo dnf install portaudio-devel python3-devel` 
 * PyQt6
 * miniaudio
+* pydub
+* audioop-lts
 
 #### Installation
 
 The repo comes with a shell script `music_player.sh` to employ along with a bash script to make an executable desktop shortcut
 
-Use this bash script in the desktop to run it:
+Use this bash script in the desktop to run it (or copy paste `script.deskop`):
 ~~~
 [Desktop Entry]
 Type=Application
 Name=My Music App
 Comment=Launch Python script with venv
-Exec=/home/cadensantopadre/VSCode/MusicPlayer/music_player.sh
-Path=/home/cadensantopadre/VSCode/MusicPlayer/
+Exec=/home/cadensantopadre/VSCode/Music/music_player.sh
+Path=/home/cadensantopadre/VSCode/Music/
 Icon=/home/cadensantopadre/Pictures/Music.jpg
 Terminal=false
 StartupNotify=false
@@ -55,6 +58,3 @@ The app scans your downloaded tracks and maps them using a local `music_files.js
 ~~~
 
 ---
-
-Coming Soon:
-* Beat visualization
