@@ -5,6 +5,23 @@
             "path": "music_files/CruelAngels.mp3"
         },
         {
+            "title": "Colors",
+            "path": "music_files/Colors.mp3"
+        },
+        {
+            "title": "E1",
+            "path": "music_files/E1.mp3"
+        },
+        
+        {
+            "title": "Love Myself",
+            "path": "music_files/LoveMyself.mp3"
+        },
+        {
+            "title": "Across",
+            "path": "music_files/Across.mp3"
+        },
+        {
             "title": "BattleV",
             "path": "music_files/BattleV.mp3"
         },
@@ -13,20 +30,12 @@
             "path": "music_files/Beelzelbub.mp3"
         },
         {
-            "title": "Ursine",
-            "path": "music_files/Ursine.mp3"
-        },
-        {
             "title": "Battle",
             "path": "music_files/Battle.mp3"
         },
         {
-            "title": "Title",
-            "path": "music_files/Title.mp3"
-        },
-        {
-            "title": "Time",
-            "path": "music_files/Time.mp3"
+            "title": "Boulevard",
+            "path": "music_files/Boulevard.mp3"
         },
         {
             "title": "Coming Clean",
@@ -37,16 +46,44 @@
             "path": "music_files/Holiday.mp3"
         },
         {
-            "title": "Boulevard",
-            "path": "music_files/Boulevard.mp3"
-        },
-        {
             "title": "Jesus",
             "path": "music_files/Jesus.mp3"
         },
         {
+            "title": "Join",
+            "path": "music_files/Join.mp3"
+        },
+        {
+            "title": "Letterbomb",
+            "path": "music_files/Letterbomb.mp3"
+        },
+        {
+            "title": "Whatshername",
+            "path": "music_files/Whatshername.mp3"
+        },
+        {
+            "title": "Live",
+            "path": "music_files/Live.mp3"
+        },
+        {
+            "title": "Minna",
+            "path": "music_files/Minna.mp3"
+        },
+        {
             "title": "Omnis Lacrima",
             "path": "music_files/OmnisLacrima.mp3"
+        },
+        {
+            "title": "Russian",
+            "path": "music_files/Russian.mp3"
+        },
+        {
+            "title": "Shes Rebel",
+            "path": "music_files/ShesRebel.mp3"
+        },
+        {
+            "title": "Smells",
+            "path": "music_files/Smells.mp3"
         },
         {
             "title": "St Jimmy",
@@ -57,8 +94,24 @@
             "path": "music_files/Tank.mp3"
         },
         {
+            "title": "Thanatos",
+            "path": "music_files/Thanatos.mp3"
+        },
+        {
             "title": "The World",
             "path": "music_files/TheWorld.mp3"
+        },
+        {
+            "title": "Time",
+            "path": "music_files/Time.mp3"
+        },
+        {
+            "title": "Title",
+            "path": "music_files/Title.mp3"
+        },
+        {
+            "title": "Ursine",
+            "path": "music_files/Ursine.mp3"
         }
     ]
 }
